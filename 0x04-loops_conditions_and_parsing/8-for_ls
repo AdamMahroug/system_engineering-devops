@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# List all non-hidden files; print part after dash if any
+# List files, printing part after first dash if it exists; ignore hidden files
 
 shopt -s nullglob
 
