@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# List files, printing part after first dash if it exists; ignore hidden files
+# Display the part of file names after the first dash (-), or whole name if no dash
 
-shopt -s nullglob
+shopt -s nullglob  # Avoid errors if no match
 
 for file in *; do
+  # Ignore hidden files automatically as * doesn't match those
   if [[ "$file" == *-* ]]; then
     echo "${file#*-}"
   else
