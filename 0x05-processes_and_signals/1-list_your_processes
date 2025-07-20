@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that lists all running processes in a user-oriented and hierarchical format
+# A Bash script that lists only the current user's running processes with the command name
 
-ps -eo user,lstart,cmd --forest | awk 'NR==1 {print "USER STARTED CMD"; next} {printf "%s %s %s %s %s %s ", $1, $2, $3, $4, $5, $6; for (i=7; i<=NF; i++) printf "%s ", $i; print ""}'
+ps -u "$USER" -o user=,args=
